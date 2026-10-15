@@ -6,19 +6,18 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest #free tier - 2,000 minutes per month
-
+     if: ${{ github.ref_name == 'main' }}
 
     steps:
       - name: Print message
-        run: echo "Hello GitHub Actions"
+        run: echo "Hello MAINGitHub Actions"
 
 
   build:
     runs-on: ubuntu-latest
-    needs: test
+    
     steps:
       - name: do build
         run: echo "building app"
 
-        
+
